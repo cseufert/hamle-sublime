@@ -1,0 +1,72 @@
+# [PackageDev] target_format: plist, ext: tmLanguage
+---
+name: HAMLE
+scopeName: text.hamle
+fileTypes: [hamle]
+uuid: b966e1a6-c12d-4281-b791-1850dba2291c
+foldingStartMarker: '^( *?)[^\s].*$'
+foldingStopMarker: '^\1\s'
+patterns:
+  - begin: '^( *?)/'
+    end: '^(?!(?:\s*$|\1\s))'
+    name: comment.block.hamle
+  - name: source.css
+    begin: '^( *?):css'
+    end: '^(?!(?:\s*$|\1\s))'
+    patterns:
+    - {include: source.css}
+    - {include: '#bardollarvar'}
+  - begin: '^( *?):javascript'
+    end: '^(?!(?:\s*$|\1\s))'
+    name: source.js
+    patterns:
+    - {include: source.js}
+  - begin: ^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_]*)(#[a-zA-Z0-9\_]+)?(\.[a-zA-Z0-9\_]+)?)|(?:(#[a-zA-Z0-9\_]+)(\.[a-zA-Z0-9\_]+)?)|(\.[a-zA-Z0-9\_]+))
+    end: $
+    patterns:
+    - {include: "#paramlist"}
+    - {include: "#bardollarvar"}
+    - {include: '#dollarvar'}
+    captures:
+      '1': {name: constant.other.hamle}
+      '2': {name: string.unquoted.id.hamle}
+      '3': {name: string.quoted.class.hamle}
+      '4': {name: string.unquoted.id.hamle}
+      '5': {name: string.quoted.class.hamle}
+      '6': {name: string.quoted.class.hamle}
+  - begin: ^ *\|[a-zA-Z]+
+    end: $
+    name: keyword.control.hamle
+    patterns:
+    - {include: "#dollarvar"}
+  - begin: '^ *(_) '
+    end: $
+    name: plain.text.hamle
+    captures:
+      '1': {name: keyword.operator.hamle}
+    patterns:
+    - {include: "#bardollarvar"}
+    - {include: '#dollarvar'}
+repository:
+  bardollarvar:
+    match: '{\$[^}]+}'
+    name: variable.parameter.bardollar.hamle
+  dollarvar:
+    match: '\$[a-zA-Z][a-zA-Z0-9_]+'
+    name: variable.parameter.bardollar.hamle
+  paramlist:
+    begin: '\['
+    end: '\]'
+    name: plain.text.hamle
+    contentName: string.other.hamle
+    patterns:
+    - {include: "#dollarvar"}
+    - {include: "#bardollarvar"}
+    - {include: "#paramlistvars"}
+  paramlistvars:
+    match: '([a-zA-Z0-9]+)(=)|[^\&](\&)'
+    captures:
+        '1': {name: entity.other.attribute-name}
+        '2': {name: support.function.hamle}
+        '3': {name: support.function.hamle}
+...
