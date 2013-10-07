@@ -2,7 +2,7 @@
 ---
 name: HAMLE
 scopeName: text.hamle
-fileTypes: [hamle]
+fileTypes: [hamle, hamle-snip]
 uuid: b966e1a6-c12d-4281-b791-1850dba2291c
 foldingStartMarker: '^( *?)[^\s].*$'
 foldingStopMarker: '^\1\s'
