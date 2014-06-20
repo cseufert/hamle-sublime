@@ -23,7 +23,7 @@ patterns:
     - {include: source.js}
   - begin: '^( *?):html'
     end: '^(?!(?:\s*$|\1\s))'
-    name: source.js
+    name: source.html
     patterns:
     - {include: source.html}
   - begin: ^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_]*)(#[a-zA-Z0-9\_]+)?(\.[a-zA-Z0-9\_]+)?)|(?:(#[a-zA-Z0-9\_]+)(\.[a-zA-Z0-9\_]+)?)|(\.[a-zA-Z0-9\_]+))
