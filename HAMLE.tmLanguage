@@ -59,6 +59,21 @@
 		</dict>
 		<dict>
 			<key>begin</key>
+			<string>^( *?):html</string>
+			<key>end</key>
+			<string>^(?!(?:\s*$|\1\s))</string>
+			<key>name</key>
+			<string>source.html</string>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>include</key>
+					<string>source.html</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>begin</key>
 			<string>^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_]*)(#[a-zA-Z0-9\_]+)?(\.[a-zA-Z0-9\_]+)?)|(?:(#[a-zA-Z0-9\_]+)(\.[a-zA-Z0-9\_]+)?)|(\.[a-zA-Z0-9\_]+))</string>
 			<key>captures</key>
 			<dict>
