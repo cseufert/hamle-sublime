@@ -26,7 +26,7 @@ patterns:
     name: source.html
     patterns:
     - {include: source.html}
-  - begin: ^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_]*)(#[a-zA-Z0-9\_]+)?(\.[a-zA-Z0-9\_]+)?)|(?:(#[a-zA-Z0-9\_]+)(\.[a-zA-Z0-9\_]+)?)|(\.[a-zA-Z0-9\_]+))
+  - begin: ^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_-]*)(#[a-zA-Z0-9\_-]+)?(\.[a-zA-Z0-9\_-]+)?)|(?:(#[a-zA-Z0-9\_-]+)(\.[a-zA-Z0-9\_-]+)?)|(\.[a-zA-Z0-9\_-]+))
     end: $
     patterns:
     - {include: "#paramlist"}
@@ -69,7 +69,7 @@ repository:
     - {include: "#bardollarvar"}
     - {include: "#paramlistvars"}
   paramlistvars:
-    match: '([a-zA-Z0-9]+)(=)|[^\&](\&)'
+    match: '([a-zA-Z0-9_-]+)(=)|[^\&](\&)'
     captures:
         '1': {name: entity.other.attribute-name}
         '2': {name: support.function.hamle}

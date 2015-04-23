@@ -74,7 +74,7 @@
 		</dict>
 		<dict>
 			<key>begin</key>
-			<string>^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_]*)(#[a-zA-Z0-9\_]+)?(\.[a-zA-Z0-9\_]+)?)|(?:(#[a-zA-Z0-9\_]+)(\.[a-zA-Z0-9\_]+)?)|(\.[a-zA-Z0-9\_]+))</string>
+			<string>^ *(?:(?:([a-zA-Z0-9][a-zA-Z0-9_-]*)(#[a-zA-Z0-9\_-]+)?(\.[a-zA-Z0-9\_-]+)?)|(?:(#[a-zA-Z0-9\_-]+)(\.[a-zA-Z0-9\_-]+)?)|(\.[a-zA-Z0-9\_-]+))</string>
 			<key>captures</key>
 			<dict>
 				<key>1</key>
@@ -232,7 +232,7 @@
 				</dict>
 			</dict>
 			<key>match</key>
-			<string>([a-zA-Z0-9]+)(=)|[^\&amp;](\&amp;)</string>
+			<string>([a-zA-Z0-9_-]+)(=)|[^\&amp;](\&amp;)</string>
 		</dict>
 	</dict>
 	<key>scopeName</key>
