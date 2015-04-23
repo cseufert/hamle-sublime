@@ -3,6 +3,7 @@ HAMLE-Sublime
 
 HAMLE Syntax Highlighter for Sublime Text Editor
 
+HAMLE Project: https://github.com/cseufert/hamle
 
 Installation
 ============
